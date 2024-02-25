@@ -14,6 +14,8 @@ Review the Submission Instructions for guidance on completing and submitting thi
 
 [What is Props and How to Use it in React](https://itnext.io/what-is-props-and-how-to-use-it-in-react-da307f500da0#:~:text=%E2%80%9CProps%E2%80%9D%20is%20a%20special%20keyword,way%20from%20parent%20to%20child){:target="_blank"}
 
+[What is Props and How to Use it in React](https://www.freecodecamp.org/news/how-to-use-props-in-reactjs/){:target="_blank"}
+
   1. What is "props" short for?
   1. How are props used in React?
   1. What is the flow of props?
