@@ -1,0 +1,73 @@
+{
+  "count": 5,
+  "records": [
+    {
+      "name": "Pikachu",
+      "health-points": 100,
+      "type": "electric",
+      "abilities": [{
+        "name": "thunderbolt"
+      },
+      {
+        "name": "quick-attack"
+      },
+      {
+        "name": "shock"
+      }]
+    },
+    {
+      "name": "Bulbasaur",
+      "health-points": 500,
+      "abilities": [
+        {
+          "name": "tackle"
+        }
+      ]
+    },
+    {
+      "name": "Jacob",
+      "health-points": 100,
+      "type": "JavaScript",
+      "abilities": [
+        {
+          "name": "Paychecks"
+        },
+        {
+          "name": "Bash"
+        },
+        {
+          "name": "HTML"
+        }
+      ]
+    },
+    {
+      "name": "Charizard",
+      "health-points": 100,
+      "type": "fire",
+      "abilities": [
+        {
+          "name": "ember"
+        },
+        {
+          "name": "fly"
+        },
+        {
+          "name": "flamethrower"
+        }
+      ]
+    },
+    {
+      "name": "Mew",
+      "health-points": 100,
+      "type": "psychic",
+      "abilities": [
+        {
+          "name": "tackle"
+        },
+        {
+          "name": "hypnosis"
+        }
+      ]
+    }
+  ]
+}
