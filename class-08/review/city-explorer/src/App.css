@@ -1,0 +1,28 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#city-input-form {
+  margin: 20px;
+}
+
+#city-input {
+  padding: 8px;
+}
+
+.display-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.card img {
+  margin: auto;
+}
+
+#error-display {
+  font-weight: 700;
+  color: red;
+}
