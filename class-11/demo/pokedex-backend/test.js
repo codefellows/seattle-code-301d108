@@ -9,7 +9,7 @@ const DATABASE_URL = process.env.DATABASE_URL;
 // modeling our Problem Domain?
 
 // figure out how to implement our idea
-// what properties or keys are being stored, what values do those map to
+// what properties or keys are being stored, what types of data will do those values map to.
 let pokemonSchema = new mongoose.Schema({
   name: String,
   type: String,
@@ -17,9 +17,8 @@ let pokemonSchema = new mongoose.Schema({
   attack: Number,
 });
 
-
 mongoose.connect(DATABASE_URL)
-.then(confirmation => {
+.then(connection => {
   console.log("CONNECTION ESTABLISHED!!");
   
   // mongoose wants to feed schemas into model constructors
