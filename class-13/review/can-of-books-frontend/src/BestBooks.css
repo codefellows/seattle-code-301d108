@@ -1,0 +1,115 @@
+body {
+    background-color: #996515; /* Change background color to golden brown */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Use serif font */
+}
+
+.best-books-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 48px; /* Increase font size */
+    color: #6c4805; /* Change color to a neon pink */
+    text-align: center;
+    margin-bottom: 50px; /* Increase margin */
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Increase letter spacing */
+    text-decoration: underline; /* Add underline */
+    font-weight: bold; /* Make the font bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+
+.book-image {
+    width: 60%; /* Decrease image width */
+    height: auto;
+    border-radius: 50%; /* Make the border radius circular */
+    box-shadow: 0px 0px 20px #00ff00; /* Neon green glow */
+    transition: transform 0.5s ease-in-out;
+}
+
+.book-image:hover {
+    transform: rotate(360deg); /* Rotate image on hover */
+}
+
+.book-caption {
+    background-color: #ffff00; /* Change background color to yellow */
+    color: #0000ff; /* Change text color to blue */
+    padding: 30px; /* Increase padding */
+    text-align: center;
+    border-radius: 20px; /* Increase border radius */
+    transform: skewY(-10deg); /* Skew the caption */
+}
+
+.book-title {
+    font-size: 32px; /* Decrease font size */
+    margin-bottom: 20px; /* Increase margin */
+    font-weight: bold;
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: line-through; /* Add strikethrough */
+}
+
+.book-author {
+    font-size: 24px; /* Decrease font size */
+    font-style: normal; /* Reset font style */
+    font-weight: bolder; /* Increase font weight */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Use serif font */
+    color: #ff0000; /* Change color to red */
+    text-decoration: underline; /* Add underline */
+}
+
+/* Animation */
+.fade-enter {
+    opacity: 0;
+    transform: translateY(-50px); /* Increase initial translateY */
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 800ms, transform 800ms;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(-50px); /* Increase final translateY */
+    transition: opacity 800ms, transform 800ms;
+}
+
+/* Header.css */
+.navbar {
+    background-color: #00ff00; /* Neon green background color */
+    border-bottom: 5px solid #ffcc00; /* Neon pink border bottom */
+}
+
+.nav-link {
+    color: #ffffff !important; /* Change link text color to black */
+    font-size: 18px; /* Decrease font size */
+    text-transform: upsercase; /* Lowercase text */
+    margin: 0 15px; /* Add spacing between navbar links */
+    transition: color 0.3s ease; /* Add transition for color change */
+}
+
+.nav-link:hover {
+    color: #ffffff !important; /* Change link color on hover to white */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Add text shadow */
+}
+
+/* Animation */
+.nav-item-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.nav-item-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms;
+}
