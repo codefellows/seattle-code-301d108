@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 // import Toast from 'react-bootstrap/Toast';
 // import ToastContainer from 'react-bootstrap/ToastContainer';
 import axios from 'axios';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
@@ -13,17 +14,42 @@ function PokemonForm({ pokemonId }) {
   let [health, setHealth] = useState('');
   let [attack, setAttack] = useState('');
   let [error, setError] = useState(null);
+  let { getIdTokenClaims, user } = useAuth0();
+
+  const fetchToken = async () => {
+    let response = await getIdTokenClaims();
+    return response.__raw;
+  } 
 
   // update
   const updatePokemon = async(values) => {
-    let response = await axios.put(SERVER_URL + `/pokemon/${pokemonId}`, values);
+    // grab token from Auth0
+    let token = await fetchToken();
+    let headers = {
+      'Authorization': `Bearer ${token}`
+    }
+
+    let response = await axios.put(
+      SERVER_URL + `/pokemon/${pokemonId}`,
+      values,
+      { headers }
+    );
     console.log(response.data);
   }
 
   // create
   const createPokemon = async (values) => {
-    let response = await axios.post(SERVER_URL + '/pokemon', values);
-    console.log(response.data);
+    let token = await fetchToken();
+    let headers = {
+      'Authorization': `Bearer ${token}`
+    }
+
+    let response = await axios.post(
+      SERVER_URL + '/pokemon',
+      { ...values,  user_id: user.email },
+      { headers }
+    );
+    alert('POKEMON CREATED!', response.data.name, response.data.user_id);
   }
   const handleInput = (e) =>  {
     let { name, value } = e.target;
@@ -57,7 +83,7 @@ function PokemonForm({ pokemonId }) {
       setError('Error sending request :(');
     }
   }
-  console.log(pokemonId);
+
   return (
     <Form onSubmit={handleSubmit}>
       <h2>{pokemonId ? 'Update' : 'Add'} a Pokemon to your pokedex!!</h2>

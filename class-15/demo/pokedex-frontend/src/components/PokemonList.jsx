@@ -25,7 +25,10 @@ function PokemonList({ setPokemonId }) {
       fetchToken()
         .then(token => {
           console.log('TOKEN FROM AUTH0', token);
-          axios.get(SERVER_URL + '/pokemon', { headers: { "Authorization": `Bearer ${token}` }})
+          axios.get(
+            SERVER_URL + '/pokemon',
+            { headers: { "Authorization": `Bearer ${token}` }}
+          )
             .then(response => setPokemon(response.data));
         });
     } else {
@@ -35,7 +38,12 @@ function PokemonList({ setPokemonId }) {
   
   // delete
   const handleDelete = async (id) => {
-    await axios.delete(SERVER_URL + `/pokemon/${id}`);
+    let token = await fetchToken();
+    let headers = {
+      'Authorization': `Bearer ${token}`
+    }
+
+    await axios.delete(SERVER_URL + `/pokemon/${id}`, { headers });
   }
 
   return (

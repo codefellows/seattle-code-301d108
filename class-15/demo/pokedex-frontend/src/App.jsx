@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PokemonList from './components/PokemonList';
 import PokemonForm from './components/PokemonForm';
 import AuthButtons from './components/auth/AuthButtons';
+import Button from 'react-bootstrap/Button'
 import Profile from './components/Profile';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
@@ -22,8 +23,12 @@ function App() {
       <BrowserRouter>
         <header>
           <h1>My Pokedex</h1>
-          <Link to='/form'>Create Form</Link>
-          <Link to='/'>Home Page</Link>
+          <Button style={{color: 'white'}}>
+            <Link to='/form'>Create Form</Link>
+          </Button>
+          <Button style={{ color: 'white' }}>
+            <Link to='/'>Home Page</Link>
+          </Button>
           <AuthButtons />
         </header>
         <Routes>
